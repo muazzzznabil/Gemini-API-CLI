@@ -19,11 +19,11 @@ A simple PowerShell CLI tool to interact with the Gemini API for generating AI-p
 Download or clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/gemini-cli.git
+git clone (https://github.com/muazzzznabil/Gemini-API-CLI)
 cd gemini-cli
 ```
 
-*(Replace `https://github.com/your-username/gemini-cli.git` with your actual repository URL.)*
+
 
 ---
 
