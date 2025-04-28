@@ -1,6 +1,6 @@
 Write-Host "Gemini CLI Loaded!"
 
-# Load the API key from the .env file
+
 $envFilePath = "c:\Users\muazg\OneDrive\Desktop\Collection of Junk\Gemini CLI\.env"
 if (Test-Path $envFilePath) {
     $envContent = Get-Content $envFilePath | ForEach-Object {
@@ -36,14 +36,14 @@ function gemini($query) {
     }
 
     try {
-        # Send the API request
+       
         $response = Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
 
-        # Debug: Print the raw response
+        # ! FOR DEBUGGING
         # Write-Host "Raw Response:" -ForegroundColor Yellow
         # Write-Host ($response | ConvertTo-Json -Depth 10)
 
-        # Extract the text from the response
+       
         if ($response -and $response.candidates -and $response.candidates[0].content.parts -and $response.candidates[0].content.parts[0].text) {
             $result = $response.candidates[0].content.parts[0].text
             Write-Host "Response: $result"
@@ -51,7 +51,7 @@ function gemini($query) {
             Write-Host "Error: Unexpected response structure or empty response." -ForegroundColor Red
         }
     } catch {
-        # Handle errors
+       
         Write-Host "Error: $($_.Exception.Message)" -ForegroundColor Red
     }
 }
